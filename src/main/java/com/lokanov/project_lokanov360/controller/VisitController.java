@@ -1,6 +1,7 @@
 package com.lokanov.project_lokanov360.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,17 @@ public class VisitController {
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Visit> add(@RequestBody Visit visit)
 	{
+		
+		Random obj = new Random();
+		int nb;
+		   nb = 1+obj.nextInt(100-1);
+		visit.setNumberReference("R00"+nb+visit.getTitre());
+		
+		if(visit.getCategory().getId() == 3 || visit.getCategory().getId() == 4)
+		{
+			 visit.getModality().setId(null);
+		}
+		
 		Visit visits = visitService.save(visit);
 		return ResponseEntity.status(HttpStatus.OK).body(visits);
 	}

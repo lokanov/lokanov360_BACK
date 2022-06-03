@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonRootName;
@@ -27,21 +28,20 @@ public class Visit {
 	@JsonFormat(pattern="yyyy-mm-dd")
 	private String dateCreated;
 	
-	
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne
 	@JoinColumn(name = "video")
 	private Video video;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne
 	@JoinColumn(name = "category")
 	private Category category;
 
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name = "modality")
 	private Modality modality;
 	
 
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne
 	@JoinColumn(name = "lieu")
 	private Lieu lieu;
 	

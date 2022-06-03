@@ -34,7 +34,6 @@ public class AbonnementController {
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Abonnement> add(@RequestBody Abonnement abonnement)
 	{
-		
 		Abonnement abonnements = abonnementService.save(abonnement);
 		return ResponseEntity.status(HttpStatus.OK).body(abonnements);
 	}

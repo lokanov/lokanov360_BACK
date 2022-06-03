@@ -2,6 +2,7 @@ package com.lokanov.project_lokanov360.service;
 
 import java.util.List;
 
+import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Modality;
 
 public interface ModalityService {
@@ -13,6 +14,8 @@ public interface ModalityService {
 		Modality findByName(String name);
 		
 		List<Modality> findAll();
+		
+		//List<Modality> findModalityByCategory(Category category);
 		
 		void delete(Long id);
 

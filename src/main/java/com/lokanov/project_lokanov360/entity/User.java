@@ -25,7 +25,7 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "role")
 	private Role role;
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne
 	@JoinColumn(name = "company")
 	private Company company;
 	

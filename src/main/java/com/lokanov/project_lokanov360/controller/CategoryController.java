@@ -30,6 +30,7 @@ public class CategoryController {
 	@Autowired
     CategoryService categoryService;
 
+	Modality modality;
 	
 	@PostMapping("/add")
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @Table(name = "company")
 public class Company {
@@ -23,6 +25,10 @@ public class Company {
 	@ManyToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "abonnement")
 	private Abonnement abonnement;
+	@JsonFormat(pattern="yyyy-mm-dd")
+	private String dateDebut;
+	@JsonFormat(pattern="yyyy-mm-dd")
+	private String dateFin;
 	
 	
 	public Company() {
@@ -111,6 +117,27 @@ public class Company {
 	public void setAbonnement(Abonnement abonnement) {
 		this.abonnement = abonnement;
 	}
+
+
+	public String getDateDebut() {
+		return dateDebut;
+	}
+
+
+	public void setDateDebut(String dateDebut) {
+		this.dateDebut = dateDebut;
+	}
+
+
+	public String getDateFin() {
+		return dateFin;
+	}
+
+
+	public void setDateFin(String dateFin) {
+		this.dateFin = dateFin;
+	}
+	
 	
 	
 }

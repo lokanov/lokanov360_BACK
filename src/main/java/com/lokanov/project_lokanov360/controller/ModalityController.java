@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Modality;
+import com.lokanov.project_lokanov360.service.CategoryService;
 import com.lokanov.project_lokanov360.service.ModalityService;
 
 @RestController
@@ -26,6 +28,8 @@ public class ModalityController {
 	
 	@Autowired
     ModalityService modalityService;
+	@Autowired
+	CategoryService categoryService;
 	
 	
 	@PostMapping("/add")
@@ -77,5 +81,21 @@ public class ModalityController {
 	  modalityService.delete(id);
 	  return ResponseEntity.noContent().build();
 	}
+	
+	/*
+	@GetMapping("/findByCategory")
+	public ResponseEntity<?> findByCategory(@RequestParam String name) {
+		try {
+			Category category = categoryService.findByName(name);
+			 List<Modality> modalitys = modalityService.findModalityByCategory(category);
+			 return ResponseEntity.ok(modalitys);
+		    } 
+		catch (Exception e)
+		{
+			return new ResponseEntity<>("missing", null, HttpStatus.NOT_FOUND);
+		}	
+	}
+	*/
+
 	
 }

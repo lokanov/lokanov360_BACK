@@ -1,6 +1,5 @@
 package com.lokanov.project_lokanov360.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,31 +8,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name = "modality")
-public class Modality {
-	
+@Table(name = "surface")
+public class Surface {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String valeur;
+	private String nameCat;
 	
 	/*@ManyToOne
 	@JoinColumn(name = "category")
 	private Category category;
-*/
+	*/
 	
-	
-	public Modality() {
+	public Surface() {
 		
 	}
 	
-	public Modality(Long id, String name) 
+	public Surface(Long id, String valeur, String nameCat) 
 	{
 		this.id = id;
-		this.name = name;
+		this.valeur = valeur;
+		this.nameCat = nameCat;
 	}
 	
 	public Long getId() {
@@ -43,21 +40,30 @@ public class Modality {
 	{
 		this.id = id;
 	}
-	public String getName() 
+	public String getvaleur() 
 	{
-		return name;
+		return valeur;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setvaleur(String valeur) {
+		this.valeur = valeur;
 	}
-	/*
+
+	public String getNameCat() {
+		return nameCat;
+	}
+
+	public void setNameCat(String nameCat) {
+		this.nameCat = nameCat;
+	}
+	
+/*
 	public Category getCategory() {
 		return category;
 	}
 
 	public void setCategory(Category category) {
 		this.category = category;
-	}*/
-
+	}
+	*/
 
 }

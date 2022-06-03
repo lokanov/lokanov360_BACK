@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Modality;
 import com.lokanov.project_lokanov360.repository.ModalityRepository;
 
@@ -39,5 +40,8 @@ public class ModalityServiceImpl implements ModalityService {
 		modalityRepository.deleteById(id);
 		
 	}
+
+	
+	
 
 }
