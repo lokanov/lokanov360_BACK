@@ -45,10 +45,10 @@ public class RoleController {
 	
 	@GetMapping("/findByName")
 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public ResponseEntity<Optional<Role>> findByName(@RequestParam RoleName name) 
+	public ResponseEntity<Role> findByName(@RequestParam RoleName name) 
 	{
-		Optional<Role> Role = RoleService.findByName(name);
-		return ResponseEntity.status(HttpStatus.OK).body(Role);
+		Role role = RoleService.findByName(name);
+		return ResponseEntity.status(HttpStatus.OK).body(role);
 	}
 
 	 

@@ -1,9 +1,11 @@
 package com.lokanov.project_lokanov360.controller;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -71,5 +73,17 @@ public class AppointmentController {
 	  return ResponseEntity.noContent().build();
 	}
 	
+	
+	//facture pdf
+	/*
+	@GetMapping("/export/pdf")
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public ResponseEntity<InputStreamResource>  exportTermsPdf()
+	{
+		List<Appointment> appointments = appointmentService.findAll();
+		ByteArrayInputStream byte = appointmentService.;
+	  return null;
+	}
+	*/
 
 }

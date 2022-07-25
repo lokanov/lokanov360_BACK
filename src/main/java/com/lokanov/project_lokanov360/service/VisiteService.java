@@ -2,6 +2,7 @@ package com.lokanov.project_lokanov360.service;
 
 import java.util.List;
 
+import com.lokanov.project_lokanov360.dto.CountVisitByCategoryDto;
 import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Visit;
 
@@ -16,5 +17,8 @@ public interface VisiteService {
 	List<Visit> findByCategory(Category category);
 	
 	void delete(Long id);
+	
+    List<CountVisitByCategoryDto> findNumberVisitByCategoryDto();
+
 
 }

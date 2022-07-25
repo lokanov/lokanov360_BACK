@@ -22,7 +22,7 @@ public class Company {
 	private String email;
 	private String personContact;
 	//private Long numberVisitAutorised;
-	@ManyToOne(cascade = {CascadeType.MERGE})
+	@ManyToOne
 	@JoinColumn(name = "abonnement")
 	private Abonnement abonnement;
 	@JsonFormat(pattern="yyyy-mm-dd")

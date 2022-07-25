@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lokanov.project_lokanov360.entity.Abonnement;
 import com.lokanov.project_lokanov360.entity.Company;
 import com.lokanov.project_lokanov360.repository.CompanyRepository;
 
@@ -37,6 +38,11 @@ public class CompanyServiceImpl  implements CompanyService{
 	public void delete(Long id) {
 	companyRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public Abonnement findAbonnement() {
+		return companyRepository.findAbonnement();
 	}
 
 }

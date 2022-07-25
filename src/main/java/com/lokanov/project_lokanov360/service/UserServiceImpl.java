@@ -43,11 +43,11 @@ public class UserServiceImpl  implements UserService{
 		return userRepository.findByName(name);
 	}
 
-	@Override
+	/*@Override
 	public List<UserDto> findByRole(Role role) {
 		List<User> users = userRepository.findByRole(role);
 		return userHelper.toUserDtos(users);
-	}
+	}*/
 
 	@Override
 	public void delete(Long id) {

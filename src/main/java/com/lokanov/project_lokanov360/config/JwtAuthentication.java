@@ -28,8 +28,7 @@ public class JwtAuthentication implements AuthenticationEntryPoint, Serializable
 		response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         response.getOutputStream().print(e.getMessage());
-
-//		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error -> Unauthorized");
+		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error -> Unauthorized");
 	}
 
 }

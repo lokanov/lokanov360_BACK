@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lokanov.project_lokanov360.dto.CountVisitByCategoryDto;
 import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Modality;
 import com.lokanov.project_lokanov360.entity.Visit;
@@ -101,5 +102,19 @@ public class VisitController {
 	  return ResponseEntity.noContent().build();
 	}
 	
+	
+	
+	//Nombre de visit par category
+	
+	@GetMapping("/findNumberVisitByCategory")
+	public   ResponseEntity<?> findNumberVisitByCategory() {
+		try {
+			 List<CountVisitByCategoryDto> visits = visitService.findNumberVisitByCategoryDto();
+              return ResponseEntity.ok(visits);
+			
+		} catch (Exception e) {
+			return  new ResponseEntity<>("missing", null, HttpStatus.NOT_FOUND);
+		}
+	}
 	
 }

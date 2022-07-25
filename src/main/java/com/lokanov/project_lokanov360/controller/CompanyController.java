@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lokanov.project_lokanov360.entity.Abonnement;
 import com.lokanov.project_lokanov360.entity.Company;
+import com.lokanov.project_lokanov360.entity.Surface;
 import com.lokanov.project_lokanov360.service.CompanyService;
 @RestController
 @CrossOrigin(origins = "*")
@@ -68,6 +70,21 @@ public class CompanyController {
 	{
 		Company company = companyService.findByName(name);
 		return ResponseEntity.status(HttpStatus.OK).body(company);
+	}
+	
+	
+	//trouver abonnement d'une entreprise
+	@GetMapping("/findAbonnement")
+	public ResponseEntity<?> findAbonnement() {
+		try {
+			
+			Abonnement abo = companyService.findAbonnement();
+			 return ResponseEntity.ok(abo);
+		    } 
+		catch (Exception e)
+		{
+			return new ResponseEntity<>("missing", null, HttpStatus.NOT_FOUND);
+		}	
 	}
 
 	 

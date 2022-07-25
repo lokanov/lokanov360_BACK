@@ -55,7 +55,7 @@ public UserHelper() {
 		user.setFirstName(userDto.getFirstName());
 		user.setId(userDto.getId());
 		user.setName(userDto.getName());
-//		user.setRole(userDto.getRoleName());
+     	//user.setRole(userDto.getRole().);
 
 		return user;
 	}

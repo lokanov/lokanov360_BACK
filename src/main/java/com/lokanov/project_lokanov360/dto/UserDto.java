@@ -1,6 +1,15 @@
 package com.lokanov.project_lokanov360.dto;
 
+import java.io.Serializable;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.lokanov.project_lokanov360.entity.Role;
+
 public class UserDto {
+	
+	
 	
 	private Long   id;
 	private String firstName;
@@ -10,6 +19,24 @@ public class UserDto {
 	private String role;
 	
 	
+	
+	
+	public UserDto() {
+		super();
+	}
+
+	
+	public UserDto(Long id, String firstName, String name, String password, String email, String role) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.name = name;
+		this.password = password;
+		this.email = email;
+		this.role = role;
+	}
+
+
 	public Long getId() {
 		return id;
 	}
@@ -26,6 +53,7 @@ public class UserDto {
 		this.firstName = firstName;
 	}
 
+	
 	public String getName() {
 		return name;
 	}
@@ -49,6 +77,7 @@ public class UserDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public String getRole() {
 		return role;
 	}
@@ -56,5 +85,6 @@ public class UserDto {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
 
 }

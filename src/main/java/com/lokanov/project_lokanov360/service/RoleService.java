@@ -12,8 +12,8 @@ public interface RoleService {
 	
 	Role findById(Long id);
 	
-	void delete(long id);
+	void delete(Long id);
 
-	Optional<Role> findByName(RoleName name);
+	Role findByName(RoleName name);
 
 }

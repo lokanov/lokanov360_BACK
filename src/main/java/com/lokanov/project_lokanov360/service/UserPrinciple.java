@@ -22,10 +22,11 @@ public class UserPrinciple implements UserDetails {
 	private String user;
 	private String role;
 
-    public String getRole() {
+public String getRole() {
 		return role;
 	}
-
+	
+	
 	public void setRole(String role) {
 		this.role = role;
 	}
@@ -46,7 +47,6 @@ public class UserPrinciple implements UserDetails {
 		
 	}
 
-
 	public static UserPrinciple build(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getRole().getName().name()));
@@ -54,6 +54,7 @@ public class UserPrinciple implements UserDetails {
 		return new UserPrinciple(user.getEmail(), user.getFirstName() +" "+ user.getName(),  user.getPassword(), authorities);
 	}
 
+	
 	public String getAuthoritie() {
 		return authoritie;
 	}

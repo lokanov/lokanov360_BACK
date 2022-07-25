@@ -1,10 +1,12 @@
 package com.lokanov.project_lokanov360.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lokanov.project_lokanov360.dto.CountVisitByCategoryDto;
 import com.lokanov.project_lokanov360.entity.Category;
 import com.lokanov.project_lokanov360.entity.Visit;
 import com.lokanov.project_lokanov360.repository.VisitRepository;
@@ -42,4 +44,10 @@ public class VisiteServiceImpl  implements VisiteService{
 	public List<Visit> findByCategory(Category category) {
 		return visitRepository.findByCategory(category);
 	}
+
+	@Override
+	public List<CountVisitByCategoryDto> findNumberVisitByCategoryDto() {
+		
+		List<CountVisitByCategoryDto> list = visitRepository.findNumberVisitByCategoryDto();
+		return list.stream().collect(Collectors.toList());		}
 }

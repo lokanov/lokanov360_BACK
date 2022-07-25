@@ -50,6 +50,8 @@ public class Visit {
 	private VisitValidation visitValidation ;
 	*/
 	
+	private Long rating;
+	
 	
 	public Visit()
 	{
@@ -57,7 +59,7 @@ public class Visit {
 	}
 
 	public Visit(Long id, String numberReference, String titre, String address, String description, Long price,
-			Video video, Category category, Modality modality, Lieu lieu,String dateCreated) {
+			Video video, Category category, Modality modality, Lieu lieu,String dateCreated, Long rating) {
 		super();
 		this.id = id;
 		this.numberReference = numberReference;
@@ -70,6 +72,7 @@ public class Visit {
 		this.modality = modality;
 		this.lieu = lieu;
 		this.dateCreated = dateCreated;
+		this.rating = rating;
 	}
 
 
@@ -159,6 +162,14 @@ public class Visit {
 
 	public void setDateCreated(String dateCreated) {
 		this.dateCreated = dateCreated;
+	}
+
+	public Long getRating() {
+		return rating;
+	}
+
+	public void setRating(Long rating) {
+		this.rating = rating;
 	}
 	
 

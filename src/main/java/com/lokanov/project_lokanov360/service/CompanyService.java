@@ -2,6 +2,7 @@ package com.lokanov.project_lokanov360.service;
 
 import java.util.List;
 
+import com.lokanov.project_lokanov360.entity.Abonnement;
 import com.lokanov.project_lokanov360.entity.Company;
 import com.lokanov.project_lokanov360.entity.Lieu;
 
@@ -13,6 +14,7 @@ public interface CompanyService {
 	Company findByName(String name);
 	
 	List<Company> findAll();
+	Abonnement findAbonnement();
 	
 	void delete(Long id);
 

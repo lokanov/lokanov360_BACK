@@ -16,7 +16,7 @@ public interface UserService {
 
 	User findByName(String name);
 
-	List<UserDto> findByRole(Role role);
+	//List<UserDto> findByRole(Role role);
 
 	void delete(Long id);
 	

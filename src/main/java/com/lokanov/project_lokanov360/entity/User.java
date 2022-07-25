@@ -25,9 +25,14 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "role")
 	private Role role;
-	@ManyToOne
+	
+	
+	
+	
+	
+	/*@ManyToOne
 	@JoinColumn(name = "company")
-	private Company company;
+	private Company company;*/
 	
 	public User(String firstName, String name, String password, String email) {
 		super();
@@ -36,7 +41,8 @@ public class User {
 		this.name = name;
 		this.password = password;
 		this.email = email;
-		//this.role = role; this.company = company;
+		//this.role = role;
+		//this.company = company;
 	}
 
 	
@@ -93,14 +99,17 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
+
+
+
+	/*
 	public Company getCompany() {
 		return company;
 	}
 
 	public void setCompany(Company company) {
 		this.company = company;
-	}
+	}*/
 
 
 }

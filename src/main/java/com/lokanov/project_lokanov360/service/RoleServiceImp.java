@@ -28,13 +28,13 @@ public class RoleServiceImp implements RoleService{
 	}
 
 	@Override
-	public Optional<Role> findByName(RoleName name) {
+	public Role findByName(RoleName name) {
 	
-		return roleRepository.findByName(name);
+		return roleRepository.findByName(name).get();
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		roleRepository.deleteById(id);
 	}
 
